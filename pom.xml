@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dalong</groupId>
+    <artifactId>demodremio-driver</artifactId>
+    <version>1.2-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <version.dremio>13.0.0-202101272034330307-20fb9275</version.dremio>
+    </properties>
+   <dependencies>
+       <dependency>
+           <groupId>com.dremio.community.plugins</groupId>
+           <artifactId>dremio-ce-jdbc-plugin</artifactId>
+           <version>${version.dremio}</version>
+           <scope>compile</scope>
+       </dependency>
+       <dependency>
+           <groupId>io.crate</groupId>
+           <artifactId>crate-jdbc</artifactId>
+           <version>2.6.0</version>
+       </dependency>
+   </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <artifactSet>
+                                <includes>
+                                    <include>io.crate:crate-jdbc</include>
+                                </includes>
+                            </artifactSet>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <repositories>
+        <repository>
+            <id>tencent-public</id>
+            <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>dremio-public</id>
+            <url>http://maven.dremio.com/public/</url>
+        </repository>
+        <repository>
+            <id>dremio-free</id>
+            <url>http://maven.dremio.com/free/</url>
+        </repository>
+    </repositories>
+</project>
