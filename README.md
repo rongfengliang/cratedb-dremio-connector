@@ -14,5 +14,5 @@ mvn clean package
 * copy jars
 
 ```code
-copy target/demodremio-driver-1.2-SNAPSHOT.jar to dremio jars dir
+copy target/demodremio-driver-1.3-SNAPSHOT.jar to dremio jars dir
 ```

@@ -77,11 +77,6 @@ public class CrateConf extends AbstractArpConf<CrateConf> {
     @NotMetadataImpacting
     public int fetchSize = 200;
 
-    @Tag(6)
-    @NotMetadataImpacting
-    @DisplayMetadata(label = ENABLE_EXTERNAL_QUERY_LABEL)
-    public boolean enableExternalQuery = false;
-
     @VisibleForTesting
     public String toJdbcConnectionString() {
         final String username = checkNotNull(this.username, "Missing username.");
@@ -99,11 +94,10 @@ public class CrateConf extends AbstractArpConf<CrateConf> {
 
         return configBuilder.withDialect(getDialect())
                 .withFetchSize(fetchSize)
-                .withSkipSchemaDiscovery(true)
+//                .withSkipSchemaDiscovery(true)
                 .clearHiddenSchemas()
                 .addHiddenSchema("sys")
                 .withDatasourceFactory(this::newDataSource)
-                .withAllowExternalQuery(enableExternalQuery)
                 .build();
     }
 
