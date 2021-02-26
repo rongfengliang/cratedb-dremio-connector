@@ -94,7 +94,7 @@ public class CrateConf extends AbstractArpConf<CrateConf> {
 
         return configBuilder.withDialect(getDialect())
                 .withFetchSize(fetchSize)
-//                .withSkipSchemaDiscovery(true)
+                .withSkipSchemaDiscovery(true)
                 .clearHiddenSchemas()
                 .addHiddenSchema("sys")
                 .withDatasourceFactory(this::newDataSource)
