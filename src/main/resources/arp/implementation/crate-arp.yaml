@@ -11,8 +11,6 @@ syntax:
   identifier_quote: '"'
   allows_boolean_literal: true
   inject_numeric_cast_project: true
-  supports_catalogs: false
-  supports_schemas: false
 data_types:
   mappings:
   - source:
