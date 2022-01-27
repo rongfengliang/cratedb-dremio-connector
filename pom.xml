@@ -25,6 +25,38 @@
            <artifactId>crate-jdbc</artifactId>
            <version>2.6.0</version>
        </dependency>
+       <dependency>
+           <groupId>com.dremio.sabot</groupId>
+           <artifactId>dremio-sabot-kernel</artifactId>
+           <classifier>tests</classifier>
+           <scope>test</scope>
+           <version>${version.dremio}</version>
+       </dependency>
+       <dependency>
+           <groupId>com.dremio</groupId>
+           <artifactId>dremio-common</artifactId>
+           <classifier>tests</classifier>
+           <scope>test</scope>
+           <version>${version.dremio}</version>
+       </dependency>
+       <dependency>
+           <groupId>com.fasterxml.jackson.core</groupId>
+           <artifactId>jackson-databind</artifactId>
+           <version>2.11.4</version>
+           <optional>true</optional>
+       </dependency>
+       <dependency>
+           <groupId>org.mockito</groupId>
+           <artifactId>mockito-core</artifactId>
+           <scope>test</scope>
+           <version>3.12.4</version>
+       </dependency>
+       <dependency>
+           <groupId>junit</groupId>
+           <artifactId>junit</artifactId>
+           <version>4.13.2</version>
+           <scope>test</scope>
+       </dependency>
    </dependencies>
     <build>
         <plugins>
