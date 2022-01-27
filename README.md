@@ -14,5 +14,5 @@ mvn clean package
 * copy jars
 
 ```code
-copy target/demodremio-driver-1.3-SNAPSHOT.jar to dremio jars dir
+copy target/cratedb-driver-20.0.0-202201050826310141-8cc7162b.jar to dremio jars dir
 ```
