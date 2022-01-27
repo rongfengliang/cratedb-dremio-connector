@@ -12,7 +12,7 @@ syntax:
   allows_boolean_literal: true
   inject_numeric_cast_project: true
   supports_catalogs: false
-  supports_schemas: false
+  supports_schemas: true
 data_types:
   mappings:
   - source:
