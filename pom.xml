@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dalong</groupId>
-    <artifactId>demodremio-driver</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <artifactId>cratedb-driver</artifactId>
+    <version>${version.dremio}</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <version.dremio>13.0.0-202101272034330307-20fb9275</version.dremio>
+        <version.dremio>20.0.0-202201050826310141-8cc7162b</version.dremio>
     </properties>
    <dependencies>
        <dependency>

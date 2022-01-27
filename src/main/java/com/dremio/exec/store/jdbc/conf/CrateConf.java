@@ -77,6 +77,21 @@ public class CrateConf extends AbstractArpConf<CrateConf> {
     @NotMetadataImpacting
     public int fetchSize = 200;
 
+
+    @Tag(6)
+    @DisplayMetadata(
+            label = "Maximum idle connections"
+    )
+    @NotMetadataImpacting
+    public int maxIdleConns = 8;
+
+    @Tag(7)
+    @DisplayMetadata(
+            label = "Connection idle time (s)"
+    )
+    @NotMetadataImpacting
+    public int idleTimeSec = 60;
+
     @VisibleForTesting
     public String toJdbcConnectionString() {
         final String username = checkNotNull(this.username, "Missing username.");
@@ -104,7 +119,7 @@ public class CrateConf extends AbstractArpConf<CrateConf> {
     private CloseableDataSource newDataSource() throws SQLException {
         Properties properties = new Properties();
         CloseableDataSource dataSource = DataSources.newGenericConnectionPoolDataSource(DRIVER,
-                toJdbcConnectionString(), this.username, this.password, properties, DataSources.CommitMode.DRIVER_SPECIFIED_COMMIT_MODE);
+                toJdbcConnectionString(), this.username, this.password, properties, DataSources.CommitMode.DRIVER_SPECIFIED_COMMIT_MODE,this.maxIdleConns,this.idleTimeSec);
         return  dataSource;
     }
 
