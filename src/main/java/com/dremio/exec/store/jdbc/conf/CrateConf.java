@@ -41,6 +41,11 @@ public class CrateConf extends AbstractArpConf<CrateConf> {
         }
 
         @Override
+        public JdbcFetcherProto.GetTableMetadataResponse getTableMetadata(JdbcFetcherProto.GetTableMetadataRequest request) {
+            return super.getTableMetadata(request);
+        }
+
+        @Override
         protected JdbcFetcherProto.CanonicalizeTablePathResponse getDatasetHandleViaGetTables(JdbcFetcherProto.CanonicalizeTablePathRequest request, Connection connection) throws SQLException {
             DatabaseMetaData metaData = connection.getMetaData();
             FilterDescriptor filter = new FilterDescriptor(request, supportsCatalogsWithoutSchemas(this.config.getDialect(), metaData));

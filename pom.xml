@@ -85,15 +85,15 @@
     <repositories>
         <repository>
             <id>tencent-public</id>
-            <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+            <url>https://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
         </repository>
         <repository>
             <id>dremio-public</id>
-            <url>http://maven.dremio.com/public/</url>
+            <url>https://maven.dremio.com/public/</url>
         </repository>
         <repository>
             <id>dremio-free</id>
-            <url>http://maven.dremio.com/free/</url>
+            <url>https://maven.dremio.com/free/</url>
         </repository>
     </repositories>
 </project>
