@@ -1,13 +1,10 @@
 package com.dremio.jdbc;
 
-import com.dremio.BaseTestQuery;
-import com.dremio.BaseTestQuery2;
-import com.dremio.TestResult;
+import com.dremio.*;
 import com.dremio.exec.ExecConstants;
 import com.dremio.exec.store.CatalogService;
 import com.dremio.exec.store.jdbc.conf.CrateConf;
 import com.dremio.options.OptionValue;
-import com.dremio.sabot.BaseTestOperator;
 import com.dremio.service.namespace.source.proto.SourceConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,14 +28,13 @@ public class MyPluginTest2 extends BaseTestQuery2 {
 
     @Test
     public  void test() throws Exception {
-        String query  = "select * from cratedb.doc.demoapp";
+        String query  = "select id,name from cratedb.doc.demoapp limit 1";
         TestResult testResult=  testBuilder()
                 .sqlQuery(query)
                 .unOrdered()
                 .baselineColumns("id", "name")
-                .baselineValues(null,    null)
+                .baselineValues(1, "a") // expect value
                 .go();
     }
-
 
 }
