@@ -345,8 +345,8 @@ public class BaseTestQuery2 extends ExecTest {
         return format("jdbc:dremio:direct=%s:%d", endpoint.getAddress(), endpoint.getUserPort());
     }
 
-    public TestBuilder testBuilder() {
-        return new TestBuilder(allocator);
+    public TestBuilder2 testBuilder() {
+        return new TestBuilder2(allocator);
     }
 
     @AfterClass
