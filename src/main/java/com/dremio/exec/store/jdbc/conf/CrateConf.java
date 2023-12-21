@@ -24,7 +24,13 @@ import java.util.Properties;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-@SourceType(value = "CRATEDB", label = "CRATEDB", uiConfig = "crate-layout.json")
+@SourceType(
+        value = "CRATEDB",
+        label = "CRATEDB",
+        uiConfig = "crate-layout.json",
+        externalQuerySupported = true,
+        previewEngineRequired = true
+)
 public class CrateConf extends AbstractArpConf<CrateConf> {
     private static final String ARP_FILENAME = "arp/implementation/crate-arp.yaml";
     private static final ArpDialect ARP_DIALECT = AbstractArpConf.loadArpFile(ARP_FILENAME, CratedbDialect::new);
