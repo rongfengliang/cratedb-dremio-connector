@@ -8,7 +8,7 @@ import com.dremio.exec.store.jdbc.*;
 import com.dremio.exec.store.jdbc.dialect.arp.ArpDialect;
 import com.dremio.exec.store.jdbc.dialect.arp.ArpYaml;
 import com.dremio.options.OptionManager;
-import com.dremio.security.CredentialsService;
+import com.dremio.services.credentials.CredentialsService;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
